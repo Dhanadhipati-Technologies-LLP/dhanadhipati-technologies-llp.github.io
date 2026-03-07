@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Wordo</title>
+    <meta name="description" content="Ludo Wordo is an educational word-based game that combines classic Ludo gameplay with vocabulary learning.">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #111827;
+            background-color: #f5f7fb;
+        }
+
+        header {
+            background-color: #1f2933;
+            color: #ffffff;
+            padding: 70px 20px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 18px;
+            max-width: 900px;
+            margin: auto;
+            color: #cbd5e1;
+        }
+
+        nav {
+            margin-top: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            color: #1f2933;
+            margin-bottom: 14px;
+            font-size: 26px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #1f2933;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .highlight {
+            background: #f0f4f8;
+            border-left: 5px solid #2563eb;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .cta {
+            background-color: #1f2933;
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 14px 34px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cta a:hover {
+            background-color: #1e40af;
+        }
+
+        footer {
+            background-color: #1f2933;
+            color: #9ca3af;
+            text-align: center;
+            padding: 30px 10px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ludo Wordo</h1>
+    <p>
+        Ludo Wordo is an educational word-based game that combines classic Ludo gameplay
+        with vocabulary learning.
+    </p>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ludo-wordo.html">Ludo Wordo</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="account-deletion.html">Account Deletion</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section>
+    <h2>What Is Ludo Wordo?</h2>
+    <div class="card">
+        <p>
+            <strong>Ludo Wordo</strong> is an innovative, strategy-based board game where players
+            collect alphabets, move pawns intelligently, and complete a target word to win the match.
+        </p>
+        <ul>
+            <li>It is not about racing or memorization, but about strategy and smart positioning</li>
+            <li>Every move allows players to collect alphabets placed across the Ludo path</li>
+            <li>Opponents’ alphabets influence your strategy</li>
+            <li>The first player to collect the correct alphabets and complete the word wins</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>The Core Objective</h2>
+    <div class="card highlight">
+        <ul>
+            <li>One target word is shown at the start of each match</li>
+            <li>Some alphabets of the word are missing</li>
+            <li>Players must identify and collect the missing alphabets</li>
+            <li>The first player to complete the word wins instantly</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>How the Gameplay Works</h2>
+    <div class="card">
+
+        <h3>Pawns and Movement</h3>
+        <ul>
+            <li>Players move pawns based on the number shown on dice rolls</li>
+            <li>The Ludo game path is filled with alphabets</li>
+            <li>There is no finish point — pawns keep moving until the word is completed</li>
+        </ul>
+
+        <h3>Collecting Alphabets</h3>
+        <ul>
+            <li>Landing on each square cell on the Ludo path allows the player to collect that alphabet</li>
+            <li>Collected alphabets are stored in a dedicated Alphabet Collection page</li>
+        </ul>
+
+        <h3>Viewing Your Alphabet Collection</h3>
+        <p>
+            Tap the big center button on the Ludo board (the home area in classic Ludo) to open the Alphabet Collection page.
+        </p>
+        <ul>
+            <li>Top section shows the target word with missing alphabets</li>
+            <li>Middle section shows your collected alphabets</li>
+            <li>Bottom section shows opponents’ collected alphabets</li>
+            <li>Use this page anytime to plan strategy and target opponents</li>
+        </ul>
+
+        <h3>Drag and Place System</h3>
+        <ul>
+            <li>Drag collected alphabets to the correct missing position in the word</li>
+            <li>If correct, it locks into place and updates for all players</li>
+            <li>If incorrect, it returns back to the collection set</li>
+        </ul>
+
+        <h3>Pawn Battles</h3>
+        <ul>
+            <li>Killing an opponent’s pawn allows you to collect one alphabet from them</li>
+            <li>Targeted attacks can directly change the outcome of the match</li>
+        </ul>
+
+        <h3>Clues</h3>
+        <p>
+            When unable to guess the word, clues are available.
+        </p>
+        <ul>
+            <li>Meaning-based clues</li>
+            <li>Pronunciation-based clues</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Multiplayer & Game Modes</h2>
+    <div class="card highlight">
+        <ul>
+            <li>Real-time multiplayer with online players</li>
+            <li>Private game rooms to play with friends</li>
+            <li>Room-based invitations</li>
+            <li>2-player and 4-player matches</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Rewards & In-Game Systems</h2>
+    <div class="card">
+        <h3>Coins & Entry Fees</h3>
+        <p>Each match requires an entry fee paid using coins. Winning matches earns more coins.</p>
+
+        <h3>Spin Wheel & Daily Rewards</h3>
+        <ul>
+            <li>Spin the wheel to gain rewards when coins run out</li>
+            <li>Daily logins are rewarded</li>
+        </ul>
+
+        <h3>Magic Boxes</h3>
+        <ul>
+            <li>Provide surprise gifts</li>
+            <li>May include special cards that unlock clues</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>7 Words a Week – Root-Based Learning</h2>
+    <div class="card">
+        <p>
+            Every week, players receive 7 connected words built around one root word.
+        </p>
+        <ul>
+            <li>Day 1 introduces the root word and the first weekly word</li>
+            <li>Each of the next 6 days reveals one new word</li>
+            <li>All 7 words are connected to the same root</li>
+            <li>Each word includes meaning, memory trick, example, part of speech, synonyms, antonyms, and grammar rules</li>
+            <li>Understanding the root helps remember all 7 words easily</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Leaderboards & Progress</h2>
+    <div class="card highlight">
+        <ul>
+            <li>Global leaderboards</li>
+            <li>Weekly, monthly, and seasonal rankings</li>
+            <li>Exciting rewards for top players</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>House of Words</h2>
+    <div class="card">
+        <ul>
+            <li>Every winning game adds its word to the House of Words</li>
+            <li>Build a personal vocabulary collection</li>
+            <li>Revisit and learn anytime</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Friends & Referrals</h2>
+    <div class="card highlight">
+        <ul>
+            <li>Add friends by username</li>
+            <li>Send and accept friend requests</li>
+            <li>Refer friends and grow the community</li>
+        </ul>
+    </div>
+</section>
+
+<div class="cta">
+    <h2>Product Status</h2>
+    <p>
+        Ludo Wordo is currently under active development.
+        If you’d like to play early or test the game before release, register your interest below.
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwcYjzqlx4xcOitgDVKhGmDW1f4nqvG6I1_4FgHYXyMVaWjg/viewform?usp=preview" target="_blank">
+        Join Early Access
+    </a>
+</div>
+
+<footer>
+    © 2025 Dhanadhipati Technologies LLP |
+    <a href="privacy-policy.html">Privacy Policy</a> |
+    <a href="terms-of-service.html">Terms</a>
+</footer>
+
+</body>
+</html>
