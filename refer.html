@@ -4,6 +4,7 @@
   <title>Ludo Wordo — Join via Referral</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,113 +20,93 @@
       box-sizing: border-box;
     }
     .container { max-width: 400px; }
-    h1 { color: #f5c518; font-size: 2em; margin-bottom: 10px; }
-    p  { color: #cccccc; font-size: 1.1em; }
+    h1 { color: #f5c518; font-size: 2em; }
+    p  { color: #cccccc; }
     .btn {
-      display: inline-block;
+      display: none;
       margin: 10px;
       padding: 14px 28px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1em;
     }
     .android { background: #34a853; color: white; }
-    .ios     { background: #007aff; color: white; }
+    .ios { background: #007aff; color: white; }
   </style>
 </head>
+
 <body>
 <div class="container">
   <h1>🎲 Ludo Wordo</h1>
-  <p>Learn English while playing Ludo.<br>Win real coins!</p>
-  <p id="status">Redirecting you to the store...</p>
+  <p id="status">Redirecting...</p>
 
-  <a class="btn android"
-     href="https://play.google.com/store/apps/details?id=com.dhanadhipatitechnologiesllp.ludowordo"
-     id="androidBtn" style="display:none">
-    Get on Android
-  </a>
-
-  <a class="btn ios"
-     href="https://apps.apple.com/app/idYOUR_IOS_APP_ID"
-     id="iosBtn" style="display:none">
-    Get on iPhone / iPad
-  </a>
-
-  <a class="btn android"
-     href="https://play.google.com/store/apps/details?id=com.dhanadhipatitechnologiesllp.ludowordo"
-     id="fallbackBtn" style="display:none">
-    Download Now
-  </a>
+  <a id="androidBtn" class="btn android">Get on Android</a>
+  <a id="iosBtn" class="btn ios">Get on iPhone</a>
 </div>
 
 <script>
-  // ── Read referral code from URL ───────────────────────────────────────────
+  // ───────── CONFIG ─────────
+  var packageName = "com.dhanadhipatitechnologiesllp.ludowordo";
+  var iosAppId    = "YOUR_IOS_APP_ID"; // replace later
+  var scheme      = "ludowordo://referral?code=";
+
+  // ───────── GET CODE ─────────
   var params = new URLSearchParams(window.location.search);
-  var code   = params.get('code') || '';
+  var code   = params.get("code") || "";
 
-  // ── Store code in cookie for 24 hours ─────────────────────────────────────
-  // This helps pass the code to the app after install on iOS
-  if (code) {
-    document.cookie = 'referral_code=' + code
-      + '; max-age=86400; path=/; SameSite=Lax';
-  }
+  // ───────── URLS ─────────
+  var playStoreUrl =
+    "https://play.google.com/store/apps/details?id=" + packageName +
+    (code ? "&referrer=code%3D" + encodeURIComponent(code) : "");
 
-  // ── Build store URLs with referral code ───────────────────────────────────
-  var playStoreUrl = 'https://play.google.com/store/apps/details'
-    + '?id=com.dhanadhipatitechnologiesllp.ludowordo'
-    + (code ? '&referrer=code%3D' + encodeURIComponent(code) : '');
+  var appStoreUrl =
+    "https://apps.apple.com/app/id" + iosAppId;
 
-  // UPDATE THIS when your iOS app is live on App Store
-  // Replace YOUR_IOS_APP_ID with the numeric ID from App Store Connect
-  // Example: https://apps.apple.com/app/id1234567890
-  var appStoreUrl = 'https://apps.apple.com/app/idYOUR_IOS_APP_ID';
+  var deepLink =
+    scheme + encodeURIComponent(code);
 
-  // ── Detect device ─────────────────────────────────────────────────────────
-  var ua        = navigator.userAgent.toLowerCase();
+  // ───────── DEVICE DETECTION ─────────
+  var ua = navigator.userAgent.toLowerCase();
   var isAndroid = /android/.test(ua);
-  var isIOS     = /iphone|ipad|ipod/.test(ua);
-  var isMac     = /macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+  var isIOS = /iphone|ipad|ipod/.test(ua);
 
-  // ── Redirect ──────────────────────────────────────────────────────────────
+  // ───────── ANDROID FLOW ─────────
   if (isAndroid) {
-    // Android — go to Play Store
-    document.getElementById('status').textContent
-      = 'Redirecting to Google Play...';
-    document.getElementById('androidBtn').href = playStoreUrl;
-    setTimeout(function() {
-      window.location.href = playStoreUrl;
-    }, 800);
+    document.getElementById("status").textContent =
+      "Redirecting to Google Play...";
 
-  } else if (isIOS || isMac) {
-    // iOS / iPad — go to App Store
-    // UPDATE appStoreUrl above before iOS launch
-    document.getElementById('status').textContent
-      = 'Redirecting to App Store...';
-    document.getElementById('iosBtn').style.display = 'inline-block';
-    document.getElementById('status').textContent
-      = 'Tap below to download on iOS:';
-    // Uncomment this line when iOS app is live:
-    // window.location.href = appStoreUrl;
-
-  } else {
-    // Desktop or unknown — show both buttons
-    document.getElementById('status').textContent
-      = 'Choose your platform:';
-    document.getElementById('androidBtn').style.display = 'inline-block';
-    document.getElementById('iosBtn').style.display     = 'inline-block';
+    // IMPORTANT: direct replace (no timeout)
+    window.location.replace(playStoreUrl);
   }
 
-  // ── Fallback button ───────────────────────────────────────────────────────
-  // Shows after 3 seconds if redirect did not happen automatically
-  setTimeout(function() {
-    var btn = document.getElementById('fallbackBtn');
-    if (btn) {
-      btn.href = isIOS ? appStoreUrl : playStoreUrl;
-      btn.style.display = 'inline-block';
-      btn.textContent   = 'Tap here if not redirected';
-    }
-  }, 3000);
+  // ───────── iOS FLOW ─────────
+  else if (isIOS) {
+    document.getElementById("status").textContent =
+      "Opening app...";
+
+    // Try opening app
+    window.location.href = deepLink;
+
+    // Fallback to App Store
+    setTimeout(function () {
+      window.location.href = appStoreUrl;
+    }, 1500);
+  }
+
+  // ───────── DESKTOP / OTHER ─────────
+  else {
+    document.getElementById("status").textContent =
+      "Choose your platform";
+
+    var androidBtn = document.getElementById("androidBtn");
+    var iosBtn     = document.getElementById("iosBtn");
+
+    androidBtn.href = playStoreUrl;
+    iosBtn.href     = appStoreUrl;
+
+    androidBtn.style.display = "inline-block";
+    iosBtn.style.display     = "inline-block";
+  }
 </script>
 </body>
 </html>
