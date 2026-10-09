@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,6 +135,30 @@
             color: #ffffff;
             text-decoration: underline;
         }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 15px 30px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav ul {
+                gap: 14px;
+            }
+
+            section {
+                margin: 30px auto;
+                padding: 0 12px;
+            }
+
+            .card {
+                padding: 22px;
+            }
+        }
     </style>
 </head>
 
@@ -159,62 +184,206 @@
 
 <section>
     <div class="card">
+
         <p><strong>Effective Date:</strong> 10-10-2025</p>
-        <p><strong>Last Updated:</strong> February 2026</p>
+        <p><strong>Last Updated:</strong> October 9, 2026</p>
 
         <h2>1. Introduction</h2>
+
         <p>
-            Ludo Wordo ("the Game") is developed and operated by 
-            <strong>Dhanadhipati Technologies LLP</strong>, Vijayawada, Andhra Pradesh, India.
+            Ludo Wordo ("the Game") is developed and operated by
+            <strong>Dhanadhipati Technologies LLP</strong>, Vijayawada,
+            Andhra Pradesh, India.
         </p>
+
         <p>
-            We are committed to protecting user privacy. This Privacy Policy explains 
-            what information we collect, how we use it, and how we protect it.
+            We are committed to protecting user privacy. This Privacy Policy
+            explains what information we collect, how we use it, how we share
+            it with third-party service providers, and how we protect it.
         </p>
 
         <h2>2. Information We Collect</h2>
+
         <ul>
-            <li><strong>Personal Information:</strong> User-provided names and profile pictures used for Leaderboards.</li>
-            <li><strong>Identifiers:</strong> Unique Device IDs (Android ID) and Advertising IDs (AAID) for analytics and game functionality.</li>
-            <li><strong>Location Data:</strong> Approximate location (City/Country level) for regional Leaderboards. We do <strong>not</strong> collect precise GPS location.</li>
-            <li><strong>Usage Data:</strong> In-game activity such as levels completed, words found, and coins earned.</li>
+            <li>
+                <strong>Personal Information:</strong>
+                User-provided names and profile pictures used for Leaderboards.
+            </li>
+
+            <li>
+                <strong>Identifiers:</strong>
+                Unique Device IDs (Android ID) and Advertising IDs (AAID)
+                for analytics, advertising measurement, and game functionality.
+            </li>
+
+            <li>
+                <strong>Location Data:</strong>
+                Approximate location (City/Country level) for regional
+                Leaderboards. We do <strong>not</strong> collect precise
+                GPS location.
+            </li>
+
+            <li>
+                <strong>Usage Data:</strong>
+                In-game activity such as levels completed, words found,
+                and coins earned.
+            </li>
+
+            <li>
+                <strong>Meta SDK Data:</strong>
+                Ludo Wordo uses the Meta (Facebook) SDK to measure app installs
+                and app opens, so we can evaluate the effectiveness of our
+                advertisements on Facebook and Instagram. For this purpose,
+                the SDK sends Meta a signal each time the app is opened,
+                together with your device's advertising ID, where available
+                and permitted by your device settings and applicable consent
+                requirements. You can reset or delete your advertising ID
+                through your phone's settings. On supported Android devices,
+                this may be available under Settings → Google → Ads.
+            </li>
+
+            <li>
+                <strong>Facebook Login Information:</strong>
+                If you choose to sign in using Facebook Login, we receive
+                your Facebook account ID, public profile name, and email
+                address, subject to the permissions you grant. We use this
+                information only to save and restore your game account and
+                to contact you about your account. We do not sell this
+                information.
+            </li>
         </ul>
 
         <h2>3. Third-Party Services</h2>
+
         <p>
-            We use third-party service providers to enable features and advertisements within the Game.
-            These providers may collect data according to their own privacy policies.
+            We use third-party service providers to enable game features,
+            analytics, account login, and advertisements within the Game.
+            These providers may collect or process data according to their
+            own privacy policies and applicable settings and permissions.
         </p>
+
         <ul>
-            <li>Google Play Services & Firebase (Analytics & Leaderboards)</li>
-            <li>Google AdMob (Advertisements)</li>
-            <li>IronSource (Advertisements)</li>
-            <li>Unity Ads (Advertisements)</li>
+            <li>
+                <strong>Google Play Services and Firebase:</strong>
+                Used for analytics and game-related features, including
+                Leaderboards where applicable.
+            </li>
+
+            <li>
+                <strong>Google AdMob:</strong>
+                Used to display advertisements.
+            </li>
+
+            <li>
+                <strong>IronSource:</strong>
+                Used for advertising and ad mediation.
+            </li>
+
+            <li>
+                <strong>Unity Ads:</strong>
+                Used to display advertisements.
+            </li>
+
+            <li>
+                <strong>Meta (Facebook):</strong>
+                Ludo Wordo uses the Meta SDK to measure app installs and app
+                opens and to evaluate the effectiveness of our advertisements
+                on Facebook and Instagram. The SDK sends Meta an app-open
+                signal together with your device's advertising ID, where
+                available and permitted by your device settings and applicable
+                consent requirements. We also offer Facebook Login as an
+                optional sign-in method. If you choose Facebook Login, we
+                receive your Facebook account ID, public profile name, and
+                email address, subject to the permissions granted. This
+                information is used to save and restore your game account
+                and to contact you about your account. We do not sell this
+                information. Meta processes data under its own Privacy Policy:
+                <a href="https://www.facebook.com/privacy/policy"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Meta Privacy Policy
+                </a>.
+            </li>
         </ul>
 
         <h2>4. Data Retention and Deletion</h2>
+
         <p>
-            We retain user data as long as the account remains active.
-            Users may request permanent data deletion by emailing:
-            <strong>cs.dhanadhipatitechnologies@gmail.com</strong>
-        </p>
-        <p>
-            All verified deletion requests will be processed within 
-            <strong>7 business days</strong>.
+            We retain user data for as long as necessary to provide the Game
+            and maintain the user's account, subject to applicable legal
+            requirements and legitimate operational needs.
         </p>
 
-        <h2>5. Children’s Privacy</h2>
+        <p>
+            Users may request permanent deletion of their account and
+            associated personal data by emailing:
+            <strong>
+                <a href="mailto:cs.dhanadhipatitechnologies@gmail.com">
+                    cs.dhanadhipatitechnologies@gmail.com
+                </a>
+            </strong>.
+        </p>
+
+        <p>
+            All verified deletion requests will be processed within
+            <strong>7 business days</strong>, subject to applicable legal
+            requirements. Some information may need to be retained where
+            required by law.
+        </p>
+
+        <p>
+            If you signed in using Facebook Login, you may also contact us
+            using the email address above to request deletion of the
+            Facebook Login information associated with your game account.
+        </p>
+
+        <h2>5. Children's Privacy</h2>
+
         <p>
             Ludo Wordo is not directed at children under the age of 13.
-            We do not knowingly collect personal information from children under 13.
+            We do not knowingly collect personal information from children
+            under 13.
         </p>
 
-        <h2>6. Contact Us</h2>
+        <h2>6. Data Security</h2>
+
+        <p>
+            We take reasonable measures to protect the information we
+            maintain against unauthorized access, disclosure, alteration,
+            or destruction. However, no method of electronic storage or
+            transmission over the internet is completely secure.
+        </p>
+
+        <h2>7. Your Choices</h2>
+
+        <p>
+            You can choose whether to use Facebook Login. You may also reset
+            or delete your device's advertising ID through your device
+            settings, where supported. Device-level advertising settings
+            may affect how advertising identifiers are made available to
+            apps and third-party services.
+        </p>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+
+        <p>
+            We may update this Privacy Policy from time to time to reflect
+            changes to the Game, our data practices, or applicable legal
+            requirements. Any updates will be published on this page, and
+            the "Last Updated" date will be revised accordingly.
+        </p>
+
+        <h2>9. Contact Us</h2>
+
         <p>
             <strong>Dhanadhipati Technologies LLP</strong><br>
             Vijayawada, Andhra Pradesh, India<br>
-            Email: cs.dhanadhipatitechnologies@gmail.com
+            Email:
+            <a href="mailto:cs.dhanadhipatitechnologies@gmail.com">
+                cs.dhanadhipatitechnologies@gmail.com
+            </a>
         </p>
+
     </div>
 </section>
 
@@ -228,3 +397,4 @@
 
 </body>
 </html>
+```
