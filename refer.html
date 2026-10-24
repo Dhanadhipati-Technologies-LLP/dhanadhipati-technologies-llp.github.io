@@ -1,112 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-IN">
 <head>
-  <title>Ludo Wordo — Join via Referral</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join me on Ludo Wordo</title>
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Your friend invited you to play Ludo Wordo, the Ludo word game. Get it free on Google Play.">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: #1a1a2e;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      box-sizing: border-box;
+  <!-- WhatsApp / social link preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ludo Wordo">
+  <meta property="og:title" content="Join me on Ludo Wordo">
+  <meta property="og:description" content="Roll the dice, collect letters, finish the secret word first. Tap to get the game free on Google Play.">
+  <meta property="og:image" content="https://www.ludowordo.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    // ───────── CONFIG ─────────
+    var packageName = "com.dhanadhipatitechnologiesllp.ludowordo";
+    var iosAppId    = "";   // put the numeric App Store ID here when the iPhone app is live, e.g. "1234567890"
+    var scheme      = "ludowordo://referral?code=";
+
+    // ───────── GET CODE ─────────
+    var params = new URLSearchParams(window.location.search);
+    var code   = (params.get("code") || "").trim().slice(0, 64);
+
+    // ───────── URLS ─────────
+    // The referral code travels to the app through the Play Store install referrer: code=XXXX
+    var playStoreUrl =
+      "https://play.google.com/store/apps/details?id=" + packageName +
+      (code ? "&referrer=code%3D" + encodeURIComponent(code) : "");
+    var appStoreUrl = iosAppId ? "https://apps.apple.com/app/id" + iosAppId : "";
+    var deepLink    = scheme + encodeURIComponent(code);
+
+    // ───────── DEVICE DETECTION ─────────
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = /android/.test(ua);
+    var isIOS = /iphone|ipad|ipod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    // ───────── ANDROID: go straight to Google Play (runs before anything else loads) ─────────
+    if (isAndroid) {
+      window.location.replace(playStoreUrl);
     }
-    .container { max-width: 400px; }
-    h1 { color: #f5c518; font-size: 2em; }
-    p  { color: #cccccc; }
-    .btn {
-      display: none;
-      margin: 10px;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .android { background: #34a853; color: white; }
-    .ios { background: #007aff; color: white; }
-  </style>
+  </script>
+
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Baloo+2:wght@700;800&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-
 <body>
-<div class="container">
-  <h1>🎲 Ludo Wordo</h1>
-  <p id="status">Redirecting...</p>
+<main class="refer">
+  <div class="refer-box">
+    <h1 class="refer-logo"><img src="assets/img/logo-360.webp" alt="Ludo Wordo" width="360" height="464"></h1>
 
-  <a id="androidBtn" class="btn android">Get on Android</a>
-  <a id="iosBtn" class="btn ios">Get on iPhone</a>
-</div>
+    <p id="status" role="status">Opening Google Play…</p>
+    <div id="codeBox" hidden>
+      <p style="margin:0">Your friend’s invite code</p>
+      <span class="refer-code" id="codeText"></span>
+    </div>
+
+    <div class="refer-actions" id="actions" hidden>
+      <a id="androidBtn" class="btn btn-green">Get on Android</a>
+      <a id="iosBtn" class="btn btn-ghost">Get on iPhone</a>
+    </div>
+
+    <p style="margin-top:2rem;font-size:.95rem">
+      <a href="./">About Ludo Wordo</a> · <a href="privacy-policy.html">Privacy Policy</a>
+    </p>
+  </div>
+</main>
 
 <script>
-  // ───────── CONFIG ─────────
-  var packageName = "com.dhanadhipatitechnologiesllp.ludowordo";
-  var iosAppId    = "YOUR_IOS_APP_ID"; // replace later
-  var scheme      = "ludowordo://referral?code=";
+  (function () {
+    var status  = document.getElementById("status");
+    var actions = document.getElementById("actions");
+    var android = document.getElementById("androidBtn");
+    var ios     = document.getElementById("iosBtn");
 
-  // ───────── GET CODE ─────────
-  var params = new URLSearchParams(window.location.search);
-  var code   = params.get("code") || "";
+    android.href = playStoreUrl;
 
-  // ───────── URLS ─────────
-  var playStoreUrl =
-    "https://play.google.com/store/apps/details?id=" + packageName +
-    (code ? "&referrer=code%3D" + encodeURIComponent(code) : "");
+    if (code) {
+      document.getElementById("codeText").textContent = code;
+      document.getElementById("codeBox").hidden = false;
+    }
 
-  var appStoreUrl =
-    "https://apps.apple.com/app/id" + iosAppId;
+    function iosComingSoon() {
+      ios.removeAttribute("href");
+      ios.setAttribute("aria-disabled", "true");
+      ios.textContent = "iPhone version coming soon";
+    }
 
-  var deepLink =
-    scheme + encodeURIComponent(code);
-
-  // ───────── DEVICE DETECTION ─────────
-  var ua = navigator.userAgent.toLowerCase();
-  var isAndroid = /android/.test(ua);
-  var isIOS = /iphone|ipad|ipod/.test(ua);
-
-  // ───────── ANDROID FLOW ─────────
-  if (isAndroid) {
-    document.getElementById("status").textContent =
-      "Redirecting to Google Play...";
-
-    // IMPORTANT: direct replace (no timeout)
-    window.location.replace(playStoreUrl);
-  }
-
-  // ───────── iOS FLOW ─────────
-  else if (isIOS) {
-    document.getElementById("status").textContent =
-      "Opening app...";
-
-    // Try opening app
-    window.location.href = deepLink;
-
-    // Fallback to App Store
-    setTimeout(function () {
-      window.location.href = appStoreUrl;
-    }, 1500);
-  }
-
-  // ───────── DESKTOP / OTHER ─────────
-  else {
-    document.getElementById("status").textContent =
-      "Choose your platform";
-
-    var androidBtn = document.getElementById("androidBtn");
-    var iosBtn     = document.getElementById("iosBtn");
-
-    androidBtn.href = playStoreUrl;
-    iosBtn.href     = appStoreUrl;
-
-    androidBtn.style.display = "inline-block";
-    iosBtn.style.display     = "inline-block";
-  }
+    if (isAndroid) {
+      // Redirect already started in <head>. Show a button in case the browser blocked it.
+      status.textContent = "Opening Google Play… If nothing happens, tap the button below.";
+      ios.hidden = true;
+      actions.hidden = false;
+    } else if (isIOS) {
+      if (iosAppId) {
+        status.textContent = "Opening Ludo Wordo…";
+        window.location.href = deepLink;              // try the app first
+        setTimeout(function () { window.location.href = appStoreUrl; }, 1500);
+        ios.href = appStoreUrl;
+        android.hidden = true;
+        actions.hidden = false;
+      } else {
+        status.textContent = "Ludo Wordo is available on Android. The iPhone version is coming soon.";
+        iosComingSoon();
+        android.hidden = true;
+        actions.hidden = false;
+      }
+    } else {
+      status.textContent = "Your friend invited you to play. Open this link on your phone, or choose your platform:";
+      if (iosAppId) { ios.href = appStoreUrl; } else { iosComingSoon(); }
+      actions.hidden = false;
+    }
+  })();
 </script>
 </body>
 </html>

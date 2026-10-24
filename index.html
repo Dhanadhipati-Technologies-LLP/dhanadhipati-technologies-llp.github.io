@@ -1,229 +1,463 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhanadhipati Technologies LLP</title>
-    <meta name="description" content="Dhanadhipati Technologies LLP builds innovative, value-driven technology products and platforms.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ludo Wordo – the Ludo word game that teaches English spelling</title>
+  <meta name="description" content="Ludo Wordo is a free Android board game: roll the dice, collect letters on the Ludo path and complete the secret word first. Learn English spelling, meanings and CBSE chapter words while you play.">
+  <link rel="canonical" href="https://www.ludowordo.com/">
+  <meta name="theme-color" content="#5a3418">
 
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="_3kOeRb-M8FAr0fZK5qZ2WLotIfs3S4XFJzFwa5cAMU" />
+  <!-- Google Search Console verification (keep) -->
+  <meta name="google-site-verification" content="_3kOeRb-M8FAr0fZK5qZ2WLotIfs3S4XFJzFwa5cAMU">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.7;
-            color: #111827;
-            background-color: #f5f7fb;
-        }
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ludo Wordo">
+  <meta property="og:title" content="Ludo Wordo – roll the dice, collect letters, finish the word">
+  <meta property="og:description" content="The Ludo word game for students. Play with friends, learn spelling and meanings, and practise CBSE chapter words. Free on Google Play.">
+  <meta property="og:url" content="https://www.ludowordo.com/">
+  <meta property="og:image" content="https://www.ludowordo.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Ludo Wordo logo and the game board">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
 
-        /* HEADER */
-        header {
-            background-color: #1f2933;
-            color: #ffffff;
-            padding: 70px 20px 40px;
-            text-align: center;
-        }
+  <!-- Android app banner hint for Chrome -->
+  <meta name="google-play-app" content="app-id=com.dhanadhipatitechnologiesllp.ludowordo">
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-        /* SUBTITLE – SOFTER COLOR */
-        header p {
-            font-size: 18px;
-            max-width: 900px;
-            margin: auto;
-            color: #cbd5e1; /* subtle variation */
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="preload" as="image" href="assets/img/logo-360.webp" imagesrcset="assets/img/logo-360.webp 360w, assets/img/logo-600.webp 600w" imagesizes="(max-width: 760px) 220px, 300px">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Baloo+2:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 
-        /* NAVIGATION */
-        nav {
-            margin-top: 30px;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        /* NAV LINKS – STRONGER */
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-        }
-
-        nav ul li a:hover {
-            color: #60a5fa; /* professional blue */
-            text-decoration: underline;
-        }
-
-        /* SECTIONS */
-        section {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        h2 {
-            color: #1f2933;
-            margin-bottom: 16px;
-            font-size: 26px;
-        }
-
-        h3 {
-            color: #1f2933;
-            margin-bottom: 10px;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-        }
-
-        a {
-            color: #2563eb;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #1f2933;
-            color: #9ca3af;
-            text-align: center;
-            padding: 50px 20px 30px;
-            font-size: 14px;
-        }
-
-        .footer-cta {
-            margin-bottom: 25px;
-        }
-
-        .footer-cta a {
-            display: inline-block;
-            background-color: #2563eb;
-            color: #ffffff;
-            padding: 14px 34px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-        }
-
-        .footer-cta a:hover {
-            background-color: #1e40af;
-        }
-
-        footer a {
-            color: #9ca3af;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-    </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Ludo Wordo",
+        "url": "https://www.ludowordo.com/",
+        "publisher": { "@id": "https://www.ludowordo.com/#org" }
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "Ludo Wordo",
+        "operatingSystem": "Android",
+        "applicationCategory": "GameApplication",
+        "applicationSubCategory": "Educational word board game",
+        "description": "A Ludo board game where players roll the dice, collect letters on the path and complete a secret word to win, while learning English spelling, pronunciation and vocabulary.",
+        "url": "https://www.ludowordo.com/",
+        "image": "https://www.ludowordo.com/assets/img/logo.png",
+        "screenshot": "https://www.ludowordo.com/assets/img/screens/gameplay.webp",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.dhanadhipatitechnologiesllp.ludowordo",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.dhanadhipatitechnologiesllp.ludowordo",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
+        "inLanguage": "en",
+        "author": { "@id": "https://www.ludowordo.com/#org" },
+        "publisher": { "@id": "https://www.ludowordo.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.ludowordo.com/#org",
+        "name": "Ludo Wordo",
+        "legalName": "Dhanadhipati Technologies LLP",
+        "url": "https://www.ludowordo.com/",
+        "logo": "https://www.ludowordo.com/assets/img/logo.png",
+        "email": "cs.dhanadhipatitechnologies@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Vijayawada", "addressRegion": "Andhra Pradesh", "addressCountry": "IN" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<header>
-    <h1>Dhanadhipati Technologies LLP</h1>
-    <p>
-        We build innovative technology products that combine thoughtful design,
-        strong engineering, and real-world value.
-    </p>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="ludo-wordo.html">Ludo Wordo</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms of Service</a></li>
-            <li><a href="account-deletion.html">Account Deletion</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Ludo Wordo home">
+      <img class="brand-die" src="assets/img/dice-64.webp" alt="" width="32" height="32">
+      Ludo Wordo
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#how-to-play">How to play</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#word-packs">Word packs</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
     </nav>
+    <a class="header-cta" data-cta="header"
+       href="https://play.google.com/store/apps/details?id=com.dhanadhipatitechnologiesllp.ludowordo&amp;referrer=utm_source%3Dludowordo.com%26utm_medium%3Dwebsite%26utm_campaign%3Dheader">Get the app</a>
+  </div>
 </header>
 
-<section>
-    <h2>Who We Are</h2>
-    <div class="card">
-        <p>
-            Dhanadhipati Technologies LLP is a technology-driven company focused on
-            creating meaningful digital products and platforms.
-        </p>
-        <p>
-            Our work is guided by clarity, simplicity, and long-term thinking.
-            We believe technology should solve real problems and create lasting impact.
-        </p>
-    </div>
-</section>
+<main id="main">
 
-<section>
-    <h2>What We Build</h2>
-    <div class="card">
-        <p>
-            We design and develop carefully chosen products where technology,
-            strategy, and user experience come together.
-        </p>
-        <p>
-            Each product we build is driven by purpose, not trends.
-        </p>
-    </div>
-</section>
+  <!-- ===== Hero ===== -->
+  <section class="hero" aria-labelledby="title">
+    <div class="wrap">
+      <div>
+        <h1 id="title" class="hero-logo">
+          <img src="assets/img/logo-360.webp"
+               srcset="assets/img/logo-360.webp 360w, assets/img/logo-600.webp 600w"
+               sizes="(max-width: 760px) 220px, 300px"
+               alt="Ludo Wordo" width="360" height="464" fetchpriority="high">
+        </h1>
+        <p class="hero-tagline">Roll the dice, collect letters, finish the secret word first.</p>
+        <p class="hero-text">Ludo Wordo is a Ludo board game for Android where every square on the path holds a letter. Play online or with friends, and pick up English spelling, word meanings and pronunciation along the way.</p>
+        <div class="hero-actions">
+          <a class="play-badge" data-cta="hero"
+             href="https://play.google.com/store/apps/details?id=com.dhanadhipatitechnologiesllp.ludowordo&amp;referrer=utm_source%3Dludowordo.com%26utm_medium%3Dwebsite%26utm_campaign%3Dhero">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                 alt="Get it on Google Play" width="207" height="80" style="height:80px">
+          </a>
+          <p class="hero-note">Free to play. iPhone version coming later.</p>
+        </div>
+        <p class="hero-legal">Your privacy matters: read the Ludo Wordo <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </div>
 
-<section>
-    <h2>Our Product</h2>
-    <div class="card">
-        <h3>Ludo Wordo</h3>
-        <p>
-            Ludo Wordo is an innovative, strategy-based board game where alphabets
-            become gameplay elements and the right word decides the winner.
-        </p>
-        <p>
-            <a href="ludo-wordo.html"><strong>Explore Ludo Wordo →</strong></a>
-        </p>
+      <div class="hero-media">
+        <div class="phone">
+          <a class="yt" href="https://youtube.com/shorts/zNRZjhYIUr4" data-id="zNRZjhYIUr4"
+             data-title="Ludo Wordo trailer">
+            <img src="https://i.ytimg.com/vi/zNRZjhYIUr4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">
+            <span class="yt-play" aria-hidden="true"></span>
+            <span class="yt-label">Watch the game in action</span>
+          </a>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section>
-    <h2>Our Philosophy</h2>
-    <div class="card">
-        <p>
-            We believe great products are built at the intersection of simplicity,
-            strategy, and purpose.
-        </p>
-        <p>
-            Technology is a tool — value creation is the goal.
-        </p>
+  <div class="path-strip" role="presentation"></div>
+
+  <!-- ===== How to play ===== -->
+  <section class="section" id="how-to-play" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="how-title">How to play</h2>
+        <p>It plays like the Ludo you already know. The difference is what you are racing for: not the home square, but the letters of a hidden word.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <h3>Pick a match</h3>
+          <p>Play online with 2–4 players on a mini or maxi board, or open a private room and invite friends. Bots fill any empty seats.</p>
+        </li>
+        <li class="step">
+          <h3>See the target word</h3>
+          <p>Each match starts with a secret word, your Word Quest. Some of its letters are missing.</p>
+        </li>
+        <li class="step">
+          <h3>Roll and collect</h3>
+          <p>Move your pawns by the dice roll. Every square you land on adds its letter to Your Vault.</p>
+        </li>
+        <li class="step">
+          <h3>Place your letters</h3>
+          <p>Drag a letter into a blank in the word. A right letter locks in; a wrong one goes back to your collection.</p>
+        </li>
+        <li class="step">
+          <h3>Capture to steal</h3>
+          <p>Knock out a rival’s pawn and take one letter from their vault. Stuck? Use a Meaning or Speech card.</p>
+        </li>
+        <li class="step">
+          <h3>Finish the word, win</h3>
+          <p>The first player to complete the word wins the match and the coins in the pot.</p>
+        </li>
+      </ol>
+      <p class="guide-link"><a href="ludo-wordo.html">Read the full game guide</a></p>
     </div>
-</section>
+  </section>
 
-<footer>
-    <div class="footer-cta">
-        <a href="contact.html">Contact Us</a>
+  <!-- ===== Features ===== -->
+  <section class="section section-wood" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="features-title">Everything in the game</h2>
+        <p>Quick matches for the bus ride home, and enough to come back to every day.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Online multiplayer</h3>
+          <p>2 to 4 players, mini and maxi boards, and bots that step in so a match never waits for a missing player. Each turn has a short timer, so games keep moving.</p>
+        </div>
+        <div class="feature">
+          <h3>Play with friends</h3>
+          <p>Create a private room, send an invite, and play a match with classmates or family.</p>
+        </div>
+        <div class="feature">
+          <h3>Coins and entry fees</h3>
+          <p>Each match has a coin entry fee and the winner takes the coins. Coins are in-game only and have no cash value.</p>
+        </div>
+        <div class="feature">
+          <h3>Daily rewards</h3>
+          <ul>
+            <li>Daily login reward</li>
+            <li>Spin wheel</li>
+            <li>Mystery box with Meaning and Speech cards</li>
+            <li>Missions to complete</li>
+          </ul>
+        </div>
+        <div class="feature">
+          <h3>Meaning and Speech cards</h3>
+          <p>Stuck on the word? A Meaning card shows what it means and a Speech card says it out loud. Unlock a clue with a card, with coins, or by watching a short video.</p>
+        </div>
+        <div class="feature">
+          <h3>Referral codes</h3>
+          <p>Share your code on WhatsApp. When a friend installs with your link, the game knows who invited them.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    © 2025 Dhanadhipati Technologies LLP |
-    <a href="privacy-policy.html">Privacy Policy</a> |
-    <a href="terms-of-service.html">Terms</a>
+  <!-- ===== The dice in our logo ===== -->
+  <section class="section dice-story" aria-labelledby="dice-title">
+    <div class="wrap dice-grid">
+      <img src="assets/img/dice-480.webp" alt="The Ludo Wordo dice: four dots shaped like an L on the left face and five dots shaped like a W on the right face" width="480" height="480" loading="lazy">
+      <div>
+        <h2 id="dice-title">Look closely at our dice</h2>
+        <p>The left face has four dots arranged as an <strong>L</strong>, for <strong>LUDO</strong>, a four-letter word.</p>
+        <p>The right face has five dots arranged as a <strong>W</strong>, for <strong>WORDO</strong>, a five-letter word.</p>
+        <p>One dice, two words, and the dots spell them out. That is the game in a single picture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Learning ===== -->
+  <section class="section" id="learning" aria-labelledby="learning-title">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="learning-title">Learning that hides inside a game</h2>
+        <p>To win, you have to spell the word. To spell it, you have to think about how it sounds and what it means. That is the whole idea.</p>
+      </div>
+
+      <div class="audience-grid">
+        <div class="audience">
+          <h3><span class="tile" aria-hidden="true">S</span>For students</h3>
+          <ul>
+            <li>Practise spelling without it feeling like homework</li>
+            <li>Hear the pronunciation of every word</li>
+            <li>Learn meanings of the words you play</li>
+            <li>Revise chapter words before a test</li>
+          </ul>
+        </div>
+        <div class="audience">
+          <h3><span class="tile g" aria-hidden="true">P</span>For parents</h3>
+          <ul>
+            <li>Screen time that builds English vocabulary</li>
+            <li>A board game the whole family can play together</li>
+            <li>Coins are virtual and cannot be cashed out</li>
+            <li>Clear <a href="privacy-policy.html">privacy policy</a> and <a href="account-deletion.html">account deletion</a></li>
+          </ul>
+        </div>
+        <div class="audience">
+          <h3><span class="tile b" aria-hidden="true">T</span>For teachers</h3>
+          <ul>
+            <li>Word packs that follow CBSE and State board chapters</li>
+            <li>Private rooms for a class word challenge</li>
+            <li>Root-word lessons that connect families of words</li>
+            <li><a href="#support">Write to us</a> about classroom use</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="week">
+        <div>
+          <h3>7 words a week</h3>
+          <p>Every week the game picks one root word and unlocks one new word built from it each day. Each word comes with its meaning, a memory trick, an example sentence, part of speech, synonyms and antonyms.</p>
+          <p>In the week shown here the root is <em>log/logy</em>, meaning “word, study, reason”. Learn the root once and <em>logic</em>, <em>logical</em> and the rest of the week’s words become easier to remember.</p>
+        </div>
+        <figure class="week-shot">
+          <img src="assets/img/screens/rootword.webp" alt="This week’s root word screen: LOG/LOGY, meaning word, study, reason, with the words logic and logical unlocked and five more locked" width="679" height="1100" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Word packs ===== -->
+  <section class="section section-alt" id="word-packs" aria-labelledby="packs-title">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="packs-title">CBSE and State board word packs</h2>
+        <p>Word packs turn a textbook chapter into the words you play with. Pick your class and subject, and the secret words in your matches come from that chapter.</p>
+      </div>
+      <div class="shelf">
+        <ul class="shelf-row" aria-label="Word packs by class and subject">
+          <li class="book"><strong><span class="visually-hidden">Class </span>6</strong><span>Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>6</strong><span>Social Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>7</strong><span>Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>7</strong><span>Social Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>8</strong><span>Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>8</strong><span>Social Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>9</strong><span>Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>9</strong><span>Social Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>10</strong><span>Science</span></li>
+          <li class="book"><strong><span class="visually-hidden">Class </span>10</strong><span>Social Science</span></li>
+        </ul>
+      </div>
+      <div class="pack-points">
+        <p><strong>Class 6 to 10</strong>Chapter-wise packs for Science, Social Science and more subjects.</p>
+        <p><strong>CBSE and State boards</strong>Words taken from the chapters students are studying this term.</p>
+        <p><strong>Bought inside the app</strong>Open the store in Ludo Wordo to see the packs and prices for your class.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Videos ===== -->
+  <section class="section section-wood" id="videos" aria-labelledby="videos-title">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="videos-title">Tutorial videos</h2>
+        <p>Short videos that show each part of the game. Tap one to play it here.</p>
+      </div>
+      <!-- To rename a video, change both data-title and the text in yt-label. -->
+      <div class="scroller">
+        <a class="yt" href="https://youtube.com/shorts/zNRZjhYIUr4" data-id="zNRZjhYIUr4" data-title="Ludo Wordo tutorial 1">
+          <span class="yt-play" aria-hidden="true"></span><span class="yt-label">Tutorial 1</span></a>
+        <a class="yt" href="https://youtube.com/shorts/gMCz9l3iFaY" data-id="gMCz9l3iFaY" data-title="Ludo Wordo tutorial 2">
+          <span class="yt-play" aria-hidden="true"></span><span class="yt-label">Tutorial 2</span></a>
+        <a class="yt" href="https://youtube.com/shorts/vxZ_jLZ1MWw" data-id="vxZ_jLZ1MWw" data-title="Ludo Wordo tutorial 3">
+          <span class="yt-play" aria-hidden="true"></span><span class="yt-label">Tutorial 3</span></a>
+        <a class="yt" href="https://youtube.com/shorts/6TapdeHo6Sk" data-id="6TapdeHo6Sk" data-title="Ludo Wordo tutorial 4">
+          <span class="yt-play" aria-hidden="true"></span><span class="yt-label">Tutorial 4</span></a>
+        <a class="yt" href="https://youtube.com/shorts/IgNJPrjffNo" data-id="IgNJPrjffNo" data-title="Ludo Wordo tutorial 5">
+          <span class="yt-play" aria-hidden="true"></span><span class="yt-label">Tutorial 5</span></a>
+        <a class="yt" href="https://youtube.com/shorts/bkPQlc56Bpw" data-id="bkPQlc56Bpw" data-title="Ludo Wordo tutorial 6">
+          <span class="yt-play" aria-hidden="true"></span><span class="yt-label">Tutorial 6</span></a>
+        <a class="yt" href="https://youtube.com/shorts/7Dqj2auyG2Q" data-id="7Dqj2auyG2Q" data-title="Ludo Wordo tutorial 7">
+          <span class="yt-play" aria-hidden="true"></span><span class="yt-label">Tutorial 7</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Screenshots =====
+       Images live in assets/img/screens/. To add one, copy a <figure> line and change the file name, alt text and caption. -->
+  <section class="section" id="screenshots" aria-labelledby="shots-title">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="shots-title">Inside the game</h2>
+        <p>Swipe through the board, your letter vault, clue cards and daily rewards.</p>
+      </div>
+      <div class="scroller shots" data-screenshots>
+        <figure class="shot"><img src="assets/img/screens/gameplay.webp" alt="A four-player match: letters on the Ludo path and each player’s word below" loading="lazy" width="534" height="1100"><figcaption>Four players, one secret word each</figcaption></figure>
+        <figure class="shot"><img src="assets/img/screens/taphere.webp" alt="The board centre button that opens the alphabet collection" loading="lazy" width="942" height="973"><figcaption>Tap the centre to see the letters</figcaption></figure>
+        <figure class="shot"><img src="assets/img/screens/collection.webp" alt="The Collections screen with Word Quest, Your Vault and Rivals’ Vault" loading="lazy" width="555" height="1100"><figcaption>Your word, your vault, your rivals</figcaption></figure>
+        <figure class="shot"><img src="assets/img/screens/unlock-clue.webp" alt="Unlocking a meaning clue with cards, coins or a video" loading="lazy" width="538" height="1100"><figcaption>Unlock a Meaning clue</figcaption></figure>
+        <figure class="shot"><img src="assets/img/screens/winner.webp" alt="Game over screen showing the winning word deliberate and its meaning" loading="lazy" width="632" height="1100"><figcaption>Win, then learn the word</figcaption></figure>
+        <figure class="shot"><img src="assets/img/screens/rootword.webp" alt="This week’s root word LOG/LOGY with its meaning and memory trick" loading="lazy" width="679" height="1100"><figcaption>A new root word every week</figcaption></figure>
+        <figure class="shot"><img src="assets/img/screens/menu.webp" alt="The Ludo Wordo home screen with Multiplayer and Play with Friends" loading="lazy" width="540" height="1100"><figcaption>Multiplayer or play with friends</figcaption></figure>
+        <figure class="shot"><img src="assets/img/screens/mysterybox.webp" alt="The Mystery Box with Meaning Cards and Speech Cards" loading="lazy" width="731" height="1100"><figcaption>Mystery Box clue cards</figcaption></figure>
+        <figure class="shot"><img src="assets/img/screens/spin.webp" alt="The Spin and Win wheel with coin prizes" loading="lazy" width="700" height="1100"><figcaption>Daily Spin and Win</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-alt" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="faq-title">Questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Is Ludo Wordo free?</summary>
+          <div><p>Yes, it is free to download and play. Optional in-app purchases are available, such as coins and chapter word packs.</p></div>
+        </details>
+        <details>
+          <summary>Is this real-money gaming?</summary>
+          <div><p>No. Entry fees and prizes are paid in in-game coins. Coins and other virtual items have no real-world value and cannot be exchanged for cash.</p></div>
+        </details>
+        <details>
+          <summary>What are Meaning and Speech cards?</summary>
+          <div><p>They are clue cards. A Meaning card reveals what the secret word means, and a Speech card plays how it sounds. You can win them from the Mystery Box, or unlock a clue with coins or by watching a short video.</p></div>
+        </details>
+        <details>
+          <summary>Which classes do the word packs cover?</summary>
+          <div><p>Packs follow CBSE and State board chapters for Class 6 to 10, in subjects such as Science and Social Science. You can see every available pack in the in-app store.</p></div>
+        </details>
+        <details>
+          <summary>Can I play with my friends?</summary>
+          <div><p>Yes. Create a private room inside the game and invite your friends. You can also add friends by username.</p></div>
+        </details>
+        <details>
+          <summary>Is there an iPhone version?</summary>
+          <div><p>Not yet. Ludo Wordo is available for Android on Google Play. An iPhone version is planned.</p></div>
+        </details>
+        <details>
+          <summary>How does a referral link work?</summary>
+          <div><p>Share your referral link from the game. When a friend opens it on Android, it takes them to Google Play with your code attached, so the game can credit the invite after they install.</p></div>
+        </details>
+        <details>
+          <summary>How do I delete my account?</summary>
+          <div><p>In the app, open Settings and tap Delete account. The <a href="account-deletion.html">account deletion page</a> explains what is deleted and what is kept.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Support / final CTA ===== -->
+  <section class="section section-wood" id="support" aria-labelledby="support-title">
+    <div class="wrap cta-band">
+      <div>
+        <h2 id="support-title">Ready to play?</h2>
+        <p>Download Ludo Wordo free on Google Play and start your first match in under a minute.</p>
+        <a class="play-badge" data-cta="footer-band"
+           href="https://play.google.com/store/apps/details?id=com.dhanadhipatitechnologiesllp.ludowordo&amp;referrer=utm_source%3Dludowordo.com%26utm_medium%3Dwebsite%26utm_campaign%3Dsupport">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+               alt="Get it on Google Play" width="207" height="80" loading="lazy" style="height:80px">
+        </a>
+      </div>
+      <div class="contact-card">
+        <h3>Help and support</h3>
+        <p>Questions about your account, a purchase, a school or a partnership? Email the Ludo Wordo team and include your username if you have one.</p>
+        <p><a href="mailto:cs.dhanadhipatitechnologies@gmail.com">cs.dhanadhipatitechnologies@gmail.com</a></p>
+        <p><a href="contact.html">All contact details</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./"><img class="brand-die" src="assets/img/dice-64.webp" alt="" width="32" height="32">Ludo Wordo</a>
+        <p>The Ludo word game for students. Available on Android.</p>
+        <p class="footer-place">Vijayawada, Andhra Pradesh, India</p>
+      </div>
+      <nav aria-label="Game">
+        <ul class="footer-links">
+          <li><a href="ludo-wordo.html">Game guide</a></li>
+          <li><a href="#videos">Tutorial videos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <ul class="footer-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="account-deletion.html">Account deletion</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="copyright">© 2026 Ludo Wordo. All rights reserved. Ludo Wordo is developed and published by Dhanadhipati Technologies LLP.<br>Google Play and the Google Play logo are trademarks of Google LLC.</p>
+  </div>
 </footer>
-
 </body>
 </html>
