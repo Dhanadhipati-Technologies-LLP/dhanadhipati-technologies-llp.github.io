@@ -1,0 +1,202 @@
+/* =====================================================================================
+   Ludo Wordo — PREMIUM Black & Gold theme (Nov 2026)
+   Loaded AFTER site.css on every page: same content, same links, same SEO — a new look that
+   matches the game (obsidian + gold, Cinzel titles). Delete the <link> to go back.
+   ===================================================================================== */
+
+:root {
+  --bg: #0b0a09;
+  --bg-2: #110f0d;
+  --panel: #17130f;
+  --panel-2: #1e1914;
+  --edge: rgba(227, 181, 91, 0.32);
+  --edge-strong: rgba(240, 200, 120, 0.65);
+  --gold: #e3b55b;
+  --gold-hi: #f7dfa0;
+  --gold-lo: #9d6d26;
+  --cream: #efe4cb;
+  --muted: #b5a68b;
+  --ink: var(--cream);
+  --ink-soft: var(--muted);
+  --line: rgba(227, 181, 91, 0.22);
+  --font-royal: "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --radius-panel: 1.1rem;
+  --glow: 0 0 0 1px var(--edge), 0 18px 40px -18px rgba(0, 0, 0, 0.85), 0 0 36px -14px rgba(227, 181, 91, 0.25);
+}
+
+html { background: var(--bg); }
+body {
+  color: var(--cream);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 70% 45% at 50% -8%, rgba(227, 181, 91, 0.16), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 92% 38%, rgba(180, 120, 40, 0.08), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 6% 72%, rgba(180, 120, 40, 0.06), transparent 70%);
+  background-attachment: fixed;
+}
+
+/* ---------- type ---------- */
+h1, h2, h3 { color: var(--gold-hi); font-family: var(--font-royal); letter-spacing: 0.02em; }
+h2 {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4.2vw, 2.7rem);
+  background: linear-gradient(180deg, #fff1c6 0%, #f0c86e 45%, #b9842f 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-shadow: none;
+}
+h3 { color: var(--gold-hi); font-weight: 700; }
+p, li { color: var(--cream); }
+a { color: var(--gold-hi); }
+a:hover { color: #fff3cf; }
+:focus-visible { outline-color: var(--gold); }
+::selection { background: rgba(227, 181, 91, 0.35); color: #fff; }
+
+/* ---------- header ---------- */
+.site-header {
+  background: rgba(11, 10, 9, 0.82) !important;
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid var(--line) !important;
+  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.9) !important;
+}
+.brand, .brand:hover { color: var(--gold-hi) !important; font-family: var(--font-royal); letter-spacing: 0.04em; }
+.site-nav a { color: var(--cream) !important; font-family: var(--font-royal); font-weight: 700; letter-spacing: 0.06em; font-size: 0.86rem; text-transform: uppercase; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--gold-hi) !important; text-shadow: 0 0 14px rgba(240, 200, 120, 0.45); }
+.header-cta, .btn, .btn-green {
+  background: linear-gradient(180deg, #fff0c4 0%, #f0c86e 42%, #c8902f 100%) !important;
+  color: #2a1a06 !important;
+  border: 1px solid #7a5216 !important;
+  border-radius: 999px !important;
+  font-family: var(--font-royal); font-weight: 700; letter-spacing: 0.06em;
+  box-shadow: 0 6px 18px -6px rgba(227, 181, 91, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+  text-shadow: none !important;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.header-cta:hover, .btn:hover, .btn-green:hover { transform: translateY(-1px); box-shadow: 0 10px 26px -8px rgba(227, 181, 91, 0.75), inset 0 1px 0 rgba(255,255,255,.7) !important; }
+.btn-ghost {
+  background: transparent !important; color: var(--gold-hi) !important;
+  border: 1px solid var(--edge-strong) !important; border-radius: 999px !important;
+}
+
+/* ---------- hero ---------- */
+.hero { background: transparent !important; border: 0 !important; }
+.hero-tagline { color: var(--gold-hi) !important; font-family: var(--font-royal); font-weight: 700; letter-spacing: 0.02em; }
+.hero-text { color: var(--cream) !important; }
+.hero-note, .hero-legal { color: var(--muted) !important; }
+.hero-logo img { filter: drop-shadow(0 18px 40px rgba(227, 181, 91, 0.28)); }
+.phone {
+  background: linear-gradient(160deg, #2a2219, #0f0c0a) !important;
+  border: 1px solid var(--edge-strong) !important;
+  box-shadow: var(--glow), 0 0 80px -20px rgba(227, 181, 91, 0.35) !important;
+}
+.yt-play { filter: drop-shadow(0 8px 20px rgba(0,0,0,.6)); }
+.yt-label { color: var(--gold-hi) !important; }
+.play-badge img { filter: drop-shadow(0 6px 16px rgba(227, 181, 91, 0.35)); }
+
+/* ---------- sections ---------- */
+.section, .section-alt, .section-wood, .dice-story, .cta-band {
+  background: transparent !important;
+  border: 0 !important;
+  position: relative;
+}
+.section-alt, .section-wood {
+  background: linear-gradient(180deg, rgba(23, 19, 15, 0.92), rgba(15, 13, 11, 0.92)) !important;
+  border-top: 1px solid var(--line) !important;
+  border-bottom: 1px solid var(--line) !important;
+}
+.section-wood h2, .section-wood h3 { color: var(--gold-hi); }
+.section-wood .section-intro p, .section-intro p { color: var(--muted) !important; }
+.section-wood a { color: var(--gold-hi) !important; }
+/* a thin gold ornament under every section title */
+.section h2::after {
+  content: ""; display: block; width: 84px; height: 2px; margin: 0.55em 0 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+/* the ornament follows the heading's alignment (left by default, centred only under centred headings) */
+[style*="text-align:center"] h2::after, [style*="text-align: center"] h2::after, .cta-band h2::after { margin-left: auto; margin-right: auto; }
+
+/* ---------- cards (steps, features, audiences, contact, books, FAQ) ---------- */
+.step, .feature, .audience, .contact-card, .refer-box, .callout, .toc, .week, .pack-points p {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel)) !important;
+  color: var(--cream) !important;
+  border: 1px solid var(--edge) !important;
+  border-radius: var(--radius-panel) !important;
+  box-shadow: var(--glow) !important;
+}
+.step::before {
+  background: linear-gradient(180deg, #fff0c4, #c8902f) !important;
+  color: #2a1a06 !important; border: 1px solid #7a5216 !important; font-family: var(--font-royal);
+}
+.step h3, .feature h3, .audience h3, .contact-card h3 { color: var(--gold-hi) !important; }
+.step p, .feature p, .feature li, .audience li, .contact-card p, .book span { color: var(--cream) !important; }
+.pack-points strong { color: var(--gold-hi) !important; }
+/* word-pack bookshelf: the books keep their bright Ludo colours, on a dark shelf with a gold edge */
+.shelf {
+  background: linear-gradient(180deg, #1d1813, #110e0b) !important;
+  border: 1px solid var(--edge) !important; box-shadow: var(--glow) !important;
+}
+.shelf-row { background: transparent !important; border: 0 !important; box-shadow: none !important; }
+.pack-points p { padding: 1rem 1.25rem !important; }
+.book { box-shadow: 0 6px 14px -6px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.25) !important; }
+.toc { padding: 0.9rem 1.2rem !important; }
+.feature:hover, .step:hover, .audience:hover { border-color: var(--edge-strong) !important; transform: translateY(-2px); transition: transform .2s ease, border-color .2s ease; }
+
+/* letter tiles keep their Ludo colours, with a dark edge */
+.tile { box-shadow: 0 3px 0 rgba(0,0,0,.45), 0 0 0 1px rgba(0,0,0,.35) !important; }
+
+/* screenshots / scroller */
+.scroller figcaption, .section-wood .scroller figcaption, .shots figcaption, .doc-shot figcaption { color: var(--muted) !important; }
+.shots img, .week-shot img, .doc-shot img, .dice-grid img {
+  border-radius: 1rem; border: 1px solid var(--edge); box-shadow: var(--glow);
+}
+.dice-grid p, .week-caption { color: var(--cream) !important; }
+.dice-grid p strong { color: var(--gold-hi) !important; }
+
+/* ---------- FAQ ---------- */
+.faq details {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel)) !important;
+  border: 1px solid var(--edge) !important; border-radius: var(--radius-panel) !important;
+  box-shadow: var(--glow) !important;
+}
+.faq summary { color: var(--gold-hi) !important; font-family: var(--font-royal); font-weight: 700; letter-spacing: 0.02em; }
+.faq summary::after { color: var(--gold) !important; }
+.faq details > div, .faq details > div p { color: var(--cream) !important; }
+
+/* ---------- legal / document pages ---------- */
+.doc-hero { background: transparent !important; border-bottom: 1px solid var(--line) !important; }
+.doc-hero h1 {
+  font-family: var(--font-royal);
+  background: linear-gradient(180deg, #fff1c6 0%, #f0c86e 45%, #b9842f 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.doc-hero p, .doc .meta { color: var(--muted) !important; }
+.doc {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel)) !important;
+  border: 1px solid var(--edge) !important; border-radius: var(--radius-panel) !important;
+  box-shadow: var(--glow) !important; color: var(--cream) !important;
+}
+.doc h2 { -webkit-text-fill-color: initial; background: none; color: var(--gold-hi); font-size: 1.45rem; }
+.doc h2::after { display: none; }
+.doc p, .doc li { color: var(--cream) !important; }
+.callout.warn { border-color: rgba(220, 90, 70, 0.6) !important; }
+.path-steps li::before { background: var(--gold) !important; color: #2a1a06 !important; }
+.kbd { background: #2a2219 !important; color: var(--gold-hi) !important; border: 1px solid var(--edge) !important; }
+.refer-code { background: #0d0b09 !important; color: var(--gold-hi) !important; border: 1px dashed var(--edge-strong) !important; font-family: var(--font-royal); letter-spacing: 0.12em; }
+
+/* ---------- footer ---------- */
+.site-footer {
+  background: linear-gradient(180deg, #0e0c0a, #070605) !important;
+  border-top: 1px solid var(--line) !important; color: var(--muted) !important;
+}
+.site-footer a { color: var(--cream) !important; }
+.site-footer a:hover { color: var(--gold-hi) !important; }
+.copyright, .footer-place, .company { color: var(--muted) !important; }
+
+/* the decorative letter path strip under the header */
+.path-strip { opacity: 0.85; filter: saturate(0.9) brightness(0.9); }
+
+/* ---------- small screens ---------- */
+@media (max-width: 760px) {
+  .site-nav a { font-size: 0.8rem; }
+}
