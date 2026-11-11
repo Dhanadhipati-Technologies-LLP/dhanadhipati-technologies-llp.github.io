@@ -200,3 +200,24 @@ a:hover { color: #fff3cf; }
 @media (max-width: 760px) {
   .site-nav a { font-size: 0.8rem; }
 }
+
+/* =====================================================================================
+   11 Nov — spacing fixes seen on the live site (Cinzel is wider than the fallback font)
+   ===================================================================================== */
+/* header: the brand keeps its own space, the menu sits to its right and never overlaps it */
+.site-header .wrap { gap: 1.5rem; }
+.brand { flex: 0 0 auto; font-size: 1.2rem !important; letter-spacing: 0.02em; }
+.site-nav { flex: 1 1 auto; min-width: 0; display: flex; justify-content: flex-end; }
+.site-nav ul { gap: 0.1rem; }
+.site-nav a { font-size: 0.74rem !important; letter-spacing: 0.05em; padding: 0.45rem 0.55rem !important; }
+.header-cta { flex: 0 0 auto; font-size: 0.85rem; padding: 0.55rem 1.1rem !important; }
+@media (max-width: 1180px) { .site-nav a { font-size: 0.68rem !important; padding: 0.4rem 0.42rem !important; letter-spacing: 0.03em; } }
+
+/* cards: breathing room inside every gold-edged box */
+.feature, .audience, .contact-card, .week, .callout, .refer-box { padding: 1.4rem 1.5rem !important; }
+.feature h3, .audience h3, .contact-card h3 { margin-top: 0; }
+.feature ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+.faq summary { padding: 1.05rem 1.4rem !important; }
+.faq details > div { padding: 0 1.4rem 1.2rem !important; }
+.week { gap: 1.5rem; }
+.week > *:first-child { padding: 0.6rem 0.4rem; }
